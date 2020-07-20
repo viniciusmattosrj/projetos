@@ -1,0 +1,61 @@
+# -------------------------------------------------------
+# Env Configurations
+# -------------------------------------------------------
+docker-compose.yml
+.idea/
+
+# -------------------------------------------------------
+# Workdir Configurations
+# -------------------------------------------------------
+bases
+cargas
+data
+diversos
+dumps
+volumes
+
+# -------------------------------------------------------
+# Projects Configurations
+# -------------------------------------------------------
+composer-full
+curso-composer
+curso-gulp
+google-cloud-sdk
+Grunt-vs-Gulp
+introducao-javascript
+introducao-node
+javascript-asw
+javascript-moderno
+laravel-tips
+mvc-cms
+mvc-laravel58
+php-ajax
+php-crud
+php-crud-orm
+php-hcode
+php-mvc
+php-pdo
+PHP-PSRs
+php-tips
+php-upinside
+php-web
+remotework
+sistemas-cadastros
+template-bootstrap
+template-php
+todecasa_mobile
+trabalho-remoto-front
+xablau-remote-work
+api_php_curl
+algoritmos/
+cod3br/
+node-setup-2020/
+todecasa_employee_web/
+
+# -------------------------------------------------------
+# New Projects
+# -------------------------------------------------------
+laravel-repositories
+laravel-ionic
+restful-api-php
+lumem-basico
