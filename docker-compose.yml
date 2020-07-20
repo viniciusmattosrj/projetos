@@ -1,12 +1,6 @@
-<<<<<<< HEAD
 version: "3"
-services:
-
-=======
-version: '3'
 
 services:
->>>>>>> 19072020 - Atualização da estrutura do projetos.
     postgres:
         image: viniciusmattosrj/postgres:11
         container_name: postgres
@@ -16,11 +10,7 @@ services:
             - POSTGRES_PASSWORD=A123456
         volumes:
             - ./volumes/postgres11:/var/lib/postgresql/data
-<<<<<<< HEAD
             - ./dumps/:/var/lib/postgresql/dump
-=======
-            - ./dumps/:/var/lib/postgresql/dumps
->>>>>>> 19072020 - Atualização da estrutura do projetos.
         networks:
             servicos:
                 ipv4_address: 10.11.0.2
@@ -30,30 +20,18 @@ services:
         container_name: mysql
         restart: always
         environment:
-<<<<<<< HEAD
             - MYSQL_USER=root
             - MYSQL_PASSWORD=A123456
             - MYSQL_DATABASE=root    
             - MYSQL_ROOT_PASSWORD=A123456
             - MYSQL_ROOT_HOST=%
         volumes:
-            - ../../projetos/volumes/mysql57novo:/var/lib/mysql
-            - ../../projetos/volumes/mysql57conf:/etc/mysql/mysql.conf.d
-=======
-            - MYSQL_ROOT_PASSWORD=A123456
-            - MYSQL_DATABASE=webadm
-            - MYSQL_USER=webadm
-            - MYSQL_PASSWORD=A123456
-            - MYSQL_ROOT_HOST=%
-        volumes:
             - ./volumes/mysql57novo:/var/lib/mysql
             - ./volumes/mysql57conf:/etc/mysql/mysql.conf.d
->>>>>>> 19072020 - Atualização da estrutura do projetos.
         networks:
             servicos:
                 ipv4_address: 10.11.0.3
 
-<<<<<<< HEAD
     mongo:
         image: viniciusmattosrj/mongo
         container_name: mongo
@@ -64,15 +42,12 @@ services:
             servicos:
                 ipv4_address: 10.11.0.4
 
-=======
->>>>>>> 19072020 - Atualização da estrutura do projetos.
     redis:
         image: viniciusmattosrj/redis:3.0
         container_name: redis
         restart: always
         networks:
             servicos:
-<<<<<<< HEAD
                 ipv4_address: 10.11.0.5    
  
     elastic:
@@ -110,18 +85,6 @@ services:
     #     networks:
     #         servicos:
     #             ipv4_address: 10.11.0.8
-=======
-                ipv4_address: 10.11.0.4
-
-    mongo:
-        image: viniciusmattosrj/mongo
-        container_name: mongo
-        restart: always
-        volumes:
-            - ./volumes/mongo:/data/db
-        networks:
-            servicos:
-                ipv4_address: 10.11.0.5
 
     #emulator:
     #    image: viniciusmattosrj/gcloud-pubsub-emulator
@@ -167,22 +130,14 @@ services:
     #    networks:
     #        servicos:
     #            ipv4_address: 10.11.0.9
->>>>>>> 19072020 - Atualização da estrutura do projetos.
 
     smtp:
         image: viniciusmattosrj/mailhog
         container_name: mailhog
         restart: always
-<<<<<<< HEAD
         ports:
             - 1025:1025
             - 8025:8025                
-=======
-        #user: root
-        ports:
-            - 1025:1025
-            - 8025:8025
->>>>>>> 19072020 - Atualização da estrutura do projetos.
 
     # Cliente gráfico para gestão do postgres
     # pgadmin:
@@ -197,11 +152,7 @@ services:
     #   dependens_on:
     #       - postgres
 
-<<<<<<< HEAD
-    # # Cliente gráfico para gestão do Mysql
-=======
     # Cliente gráfico para gestão do Mysql
->>>>>>> 19072020 - Atualização da estrutura do projetos.
     # adminer:
     #   image: viniciusmattosrj/adminer
     #   container_name: adminer
@@ -212,18 +163,8 @@ services:
     #       - mysql
 
 networks:
-<<<<<<< HEAD
   servicos:
     driver: bridge
     ipam:
      config:
        - subnet: 10.11.0.0/24
-         gateway: 10.11.0.1
-=======
-    servicos:
-        driver: bridge
-        ipam:
-            config:
-                - subnet: 10.11.0.0/24
-                  #gateway: 10.11.0.1
->>>>>>> 19072020 - Atualização da estrutura do projetos.
