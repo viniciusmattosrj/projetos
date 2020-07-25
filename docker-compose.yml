@@ -50,24 +50,33 @@ services:
             servicos:
                 ipv4_address: 10.11.0.5    
  
-    elastic:
-        image: viniciusmattosrj/elasticsearch:7.6
-        container_name: elastic
-        restart: always
-        environment:
-            - node.name=es01
-            - "ES_JAVA_OPTS=-Xms500M -Xmx1G"
-        ulimits:
-            memlock:
-                soft: -1
-                hard: -1
-        volumes:
-            - ./volumes/elastic:/usr/share/elasticsearch/data
-        ports:
-            - 9200:9200
-        networks:
-            servicos:
-                ipv4_address: 10.11.0.6           
+    # elastic:
+    #    image: viniciusmattosrj/elasticsearch:7.6
+    #    container_name: elastic
+    #    restart: always
+    #    environment:
+    #        - node.name=es01
+    #        - "ES_JAVA_OPTS=-Xms500M -Xmx1G"
+    #    ulimits:
+    #        memlock:
+    #            soft: -1
+    #            hard: -1
+    #    volumes:
+    #        - ./volumes/elastic:/usr/share/elasticsearch/data
+    #    ports:
+    #        - 9200:9200
+    #    networks:
+    #        servicos:
+    #            ipv4_address: 10.11.0.6           
+
+    # emulator:
+    #    image: viniciusmattosrj/gcloud-pubsub-emulator
+    #    container_name: emulador_pubsub
+    #    ports:
+    #        - '8085:8085'
+    #    networks:
+    #        servicos:
+    #            ipv4_address: 10.11.0.7
 
     # ftp-icd:
     #     image: viniciusmattosrj/ftp
@@ -85,51 +94,6 @@ services:
     #     networks:
     #         servicos:
     #             ipv4_address: 10.11.0.8
-
-    #emulator:
-    #    image: viniciusmattosrj/gcloud-pubsub-emulator
-    #    container_name: emulador_pubsub
-    #    ports:
-    #        - '8085:8085'
-    #    networks:
-    #        servicos:
-    #            ipv4_address: 10.11.0.6
-
-    #elastic:
-    #    image: viniciusmattosrj/elasticsearch:7.6
-    #    container_name: elastic
-    #    restart: always
-    #    environment:
-    #        - node.name=es01
-    #        - 'ES_JAVA_OPTS=-Xms500M -Xmx1G'
-    #    ulimits:
-    #        memlock:
-    #            soft: -1
-    #            hard: -1
-    #    volumes:
-    #        - ./volumes/elastic:/usr/share/elasticsearch/data
-    #    ports:
-    #        - 9200:9200
-    #    networks:
-    #        servicos:
-    #            ipv4_address: 10.11.0.7
-
-    #ftp-icd:
-    #    image: stilliard/pure-ftpd:latest
-    #    container_name: ftp
-    #    restart: always
-    #    environment:
-    #        PUBLICHOST: 10.11.0.9
-    #        FTP_USER_NAME: "webadmce"
-    #        FTP_USER_PASS: "A123456"
-    #        FTP_USER_HOME: "/home"
-    #        FTP_USER_UID: 33
-    #        FTP_USER_GID: 33
-    #    volumes:
-    #        - ./ftp/ftpicd:/home
-    #    networks:
-    #        servicos:
-    #            ipv4_address: 10.11.0.9
 
     smtp:
         image: viniciusmattosrj/mailhog
