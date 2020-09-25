@@ -13,9 +13,14 @@ Esse projeto é apenas uma base, para que seus demais projetos funcionem em rede
 
 
 ## Instalação
-Realizar o git clone do projeto
+Para o correto funcionamento dos serviços base na rede do docker, execute o comando para clonar o projeto:
 ```bash
-git@github.com:viniciusmattosrj/projetos.git 
+git clone git@github.com:viniciusmattosrj/projetos.git
+```
+
+Para que o git não considere alterações de permissão como modificações a serem rastreadas, execute:
+```
+git config core.fileMode false
 ```
 
 Crie os diretórios e aplique a permissão:
@@ -27,12 +32,8 @@ mkdir -p ./volumes/postgres11 \
 && mkdir -p ./volumes/postgres/storage \
 && chmod 777 -R ./volumes
 ```
-Para que o git não considere alterações de permissão como modificações a serem rastreadas, execute:
-```
-git config core.fileMode false
-```
 
-Entre pelo terminal na pasta do projeto e rode e suba o servidor:
+Para subir os containers docker execute:
 ```
 docker-compose up -d
 ```
